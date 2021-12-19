@@ -4,10 +4,19 @@ jobs:
   convert_via_pandoc:
     runs-on: ubuntu-18.04
     steps:
+      - name: Set up build folder
+        run: mkdir -p build
+
       - uses: actions/checkout@v2
       - uses: docker://pandoc/core:2.9
         with:
           args: >-  # allows you to break string into multiple lines
             --standalone
-            --output=index.html
+            --output=build/index.html
             index.md
+
+      - name: Deploy 🚀
+        uses: JamesIves/github-pages-deploy-action@4.1.7
+        with:
+          branch: gh-pages # The branch the action should deploy to.
+          folder: build # The folder the action should deploy.
