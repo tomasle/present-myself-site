@@ -12,6 +12,7 @@ jobs:
         with:
           args: >-  # allows you to break string into multiple lines
             --standalone
+            --metadata title="my site"
             --output=build/index.html
             index.md
 
