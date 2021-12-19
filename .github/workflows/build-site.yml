@@ -13,9 +13,10 @@ jobs:
           args: >-  # allows you to break string into multiple lines
             --standalone
             --metadata title="my site"
-            --output=./build/index.html
+            --output=index.html
             index.md
-
+      - name: move the compiled document
+        run: mv index.html build
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@4.1.7
         with:
