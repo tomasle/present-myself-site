@@ -18,6 +18,14 @@ jobs:
             --output=index.html
             index.md
 
+      - name: compile about.md
+        run: >
+          pandoc
+            --standalone
+            --metadata title="my site"
+            --output=about.html
+            about.md
+
       - name: move the compiled document
         run: ls -R -la && mv index.html build
 
