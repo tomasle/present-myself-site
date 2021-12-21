@@ -27,7 +27,7 @@ jobs:
             about.md
 
       - name: move the compiled document
-        run: ls -R -la && mv index.html build
+        run: ls -R -la && mv *.html build
 
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@4.1.7
