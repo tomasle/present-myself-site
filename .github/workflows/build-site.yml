@@ -19,7 +19,7 @@ jobs:
       - name: Install some libs
         run: pip install numpy
       - name: Generate some data for the site
-        run: bash compile_index.sh notebooks base_document.md build
+        run: bash compile_index.sh notebooks base_document.md ./
 
       - uses: docker://pandoc/core:2.9
         with:
