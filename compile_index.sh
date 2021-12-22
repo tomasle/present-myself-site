@@ -16,9 +16,10 @@ wget "https://raw.githubusercontent.com/alexdiem/data-science-python/main/L2_plo
 cd ..
 
 jupyter nbconvert --to html --output-dir $OUTPUT_PATH/ $JUPYTER_FOLDER/*.ipynb
-
+echo -e "\n" >> index.md
 for notebook in $OUTPUT_PATH/*.html
 
 do
-  echo "$notebook" | tee -a index.md
+  echo "https://tomasle.github.io/present-myself-site/$notebook" | tee -a index.md
+  echo -e "\n" >> index.md
 done
